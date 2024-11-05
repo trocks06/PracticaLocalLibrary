@@ -1,6 +1,4 @@
 from django.db import models
-from django.db.models import UniqueConstraint
-from django.db.models.functions import Lower
 from django.urls import reverse
 import uuid
 
