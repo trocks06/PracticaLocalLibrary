@@ -3,7 +3,10 @@
 {% block content %}
   <h1>Title: {{ book.title }}</h1>
 
-  <p><strong>Author:</strong> <a href="{% url 'author_detail' book.author.pk %}">{{ book.author }}</a></p> <!-- author detail link not yet defined -->
+    <a href="{% url 'book_update' book.id %}">Редактировать</a>
+    <a href="{% url 'book_delete' book.id %}">Удалить</a>
+
+  <p><strong>Author:</strong> {% if book.author.pk %} <a href="{% url 'author_detail' book.author.pk %}">{{ book.author }}</a> {% else %} <p>Автора нет</p> {% endif %} </p>
   <p><strong>Summary:</strong> {{ book.summary }}</p>
   <p><strong>ISBN:</strong> {{ book.isbn }}</p>
   <p><strong>Language:</strong> {{ book.language }}</p>
